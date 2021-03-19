@@ -1,24 +1,19 @@
-
+import React from 'react'
 import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          A simple Todo List Application
-        </a>
-      </header>
-    </div>
-  );
+import todos from './data'
+import ListTodos from './components/ListTodos'
+class App extends React.Component {
+  state = {
+    todos: todos
+  }
+  
+  render() {
+    return (
+      <div>
+        <ListTodos todos = {this.state.todos}/>
+      </div>
+    )
+  }
 }
 
 export default App;
